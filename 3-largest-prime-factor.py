@@ -9,7 +9,7 @@ count = 0
 for x in range(1, int(pow(TARGETNUMBER, 0.5) + 1)):  # By only checking up to the square root, the workload is cut drastically while still finding every factor.
 	if TARGETNUMBER % x == 0:
 		factors.append(x)
-		factors.append(int(num/x))  # If x is a factor of z, then z/x must also be a factor of z, hence getting 2 factors at once.
+		factors.append(int(TARGETNUMBER/x))  # If x is a factor of z, then z/x must also be a factor of z, hence getting 2 factors at once.
 
 factors.sort()
 
