@@ -10,4 +10,4 @@ for i in range(2, len(checklist)):  # Clears Sieve of Eratosthenes.
 		if j % i == 0:
 			checklist.remove(j)
 
-sum(checklist)
+print(sum(checklist))
