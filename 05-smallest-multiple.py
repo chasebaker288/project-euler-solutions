@@ -15,4 +15,4 @@ for i in range(2, UPTO):  # Looks at previous entries, and removes any previousl
 for i in factors:
 	result *= i
 
-int(result)
+print(int(result))
