@@ -5,4 +5,4 @@
 
 UPTO = 100
 
-pow(sum(range(UPTO + 1)), 2) - sum([pow(x, 2) for x in range(UPTO + 1)])
+print(pow(sum(range(UPTO + 1)), 2) - sum([pow(x, 2) for x in range(UPTO + 1)]))
