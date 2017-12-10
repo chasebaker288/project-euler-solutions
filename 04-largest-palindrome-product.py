@@ -21,4 +21,4 @@ if NUMBEROFDIGITS > 1:
 else:
 	pass
 
-result
+print(result)
