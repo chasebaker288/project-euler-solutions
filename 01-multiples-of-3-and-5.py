@@ -6,4 +6,4 @@ factor1 = 3
 factor2 = 5
 upperlimit = 1000
 
-sum([x for x in range(1, upperlimit) if x % factor1 == 0 or x % factor2 == 0])
+print(sum([x for x in range(1, upperlimit) if x % factor1 == 0 or x % factor2 == 0]))
