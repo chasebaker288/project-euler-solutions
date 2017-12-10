@@ -22,4 +22,4 @@ for a in range(1, SUM):  # Wish I knew a way to cut this range down that would g
 						result = a*b*c
 						break  # The problem states that there is only one answer, so it stops once a result is found instead of testing for other possible answers.
 
-result
+print(result)

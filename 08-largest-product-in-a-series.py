@@ -17,4 +17,4 @@ for i in range(1 + len(LISTFORM) - DIGITS):
 	else:
 		pass
 
-result
+print(result)

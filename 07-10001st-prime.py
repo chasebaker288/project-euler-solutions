@@ -19,4 +19,4 @@ while len(primes) < NTH:
 		pass
 	numbertocheck += 1
 
-primes[-1]
+print(primes[-1])

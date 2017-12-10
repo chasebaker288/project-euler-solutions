@@ -3,10 +3,10 @@
 	1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 	By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms."""
 
-upperlimit = 4000000
+UPPERLIMIT = 4000000
 
 fibonacci = [1, 2]
-while fibonacci[-1] < upperlimit:
+while fibonacci[-1] < UPPERLIMIT:
 	fibonacci.append(fibonacci[-1]+fibonacci[-2])
 
-sum([x for x in fibonacci if x % 2 == 0 and x < upperlimit])
+print(sum([x for x in fibonacci if x % 2 == 0 and x < upperlimit]))
