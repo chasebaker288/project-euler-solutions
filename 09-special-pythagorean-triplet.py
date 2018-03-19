@@ -16,9 +16,9 @@ for a in range(1, SUM):  # Wish I knew a way to cut this range down that would g
 			if finished:
 				break
 			else:
-				for c in [x for x in range(b, SUM) if a+b+x == SUM]:  # Checks pythagorean property only if the sum property is met.
-					if pow(a, 2) + pow(b, 2) == pow(c, 2):
-						finished = True
+				for c in [x for x in range(b, SUM) if a+b+x == SUM][::-1]:  # Checks pythagorean property only if the sum property is met. Goes through the list backwards, on the intuition that C will be likely be noticeably larger than a or b.
+					finished = pow(a, 2) + pow(b, 2) == pow(c, 2)
+					if finished:
 						result = a*b*c
 						break  # The problem states that there is only one answer, so it stops once a result is found instead of testing for other possible answers.
 

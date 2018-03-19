@@ -2,38 +2,24 @@
 	What is the largest prime factor of the number 600851475143 ?"""
 
 TARGETNUMBER = 600851475143
-factors = []
-primesfound = []
-count = 0
 
-for x in range(1, int(pow(TARGETNUMBER, 0.5) + 1)):  # By only checking up to the square root, the workload is cut drastically while still finding every factor.
-	if TARGETNUMBER % x == 0:
-		factors.append(x)
-		factors.append(int(TARGETNUMBER/x))  # If x is a factor of z, then z/x must also be a factor of z, hence getting 2 factors at once.
+
+def isprime(integer):
+	if not isinstance(integer, int):
+		return False
+	elif integer < 1:
+		return False
+	elif integer in [2, 3]:
+		return True
 	else:
-		pass
-
-factors.sort()
-
-for x in factors:
-	count += 1
-	if pow(x, 0.5) != int(pow(x, 0.5)):  # If the square root is an integer, then the square root is a factor and therefore the number can't be prime, so we can narrow our search to cases where the square root is not an integer.
-		primetest = []
-		for y in range(1, int(pow(x, 0.5))):
-			if x % y == 0:
-				primetest.append(y)
-				primetest.append(int(x/y))
-				if len(primetest) >= 3:  # If it doesn't have EXACTLY two factors (itself and 1), then it can't be prime.
-					break
-				else:
-					pass
+		output = True
+		for x in range(2, int(pow(integer, 0.5))):  # We only need to search up to the square root, cutting the workload from O(N) to O(N**(1/2)).
+			if integer % x == 0:  # If we find any factors (other than our original number and 1), then the number can't be prime.
+				output = False
+				break
 			else:
 				pass
-		if len(primetest) == 2:  # See previous comment
-			primesfound.append(max(primetest))  # The only factor we care about is the prime, which is the larger of the two.
-		else:
-			pass
-	else:
-		pass
+		return output
 
-print(max(primesfound))
+
+print(max([x for x in sum([[x, int(TARGETNUMBER/x)] for x in range(1, int(pow(TARGETNUMBER, 0.5))) if TARGETNUMBER % x == 0], []) if isprime(x)]))
